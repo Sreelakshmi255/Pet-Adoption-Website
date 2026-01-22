@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adopt a Pet - Every Pet Deserves a Home</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header */
+    header {
+      background: url('header.jpeg') no-repeat center center/cover;
+      height: 300px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1 {
+      z-index: 1;
+      font-size: 3em;
+    }
+    /* Navigation */
+    nav {
+      background: #333;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: inline-block;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+      font-size: 1.1em;
+    }
+    nav ul li a {
+      color: #fff;
+    }
+    nav ul li a:hover {
+      color: #ff6f61;
+    }
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    /* Section Styles */
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    h2.section-title {
+      text-align: center;
+      color: #ff6f61;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    .text-reading {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+    .reading-highlight {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+    /* Adopt Panel (replacing the city entry) */
+    .adopt-panel {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .adopt-panel button {
+      padding: 10px 20px;
+      border: none;
+      background: #ff6f61;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .adopt-panel button:hover {
+      background: #ff3b2e;
+    }
+    /* Steps Section */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .step {
+      background: #fff;
+      padding: 20px;
+      width: 250px;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .step h3 {
+      margin-bottom: 10px;
+      color: #ff6f61;
+    }
+    /* Testimonials */
+    .testimonial {
+      background: #fff;
+      border-left: 4px solid #ff6f61;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      font-style: italic;
+    }
+    .adopt-btn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff6f61;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+  adopt-btn:hover {
+  background-color: #ff3b2e;
+}
+
+    .testimonial cite {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+    }
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9em;
+    }
+    footer a {
+      color: #ff6f61;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="homepage2.html">Home</a></li>
+      <li><a href="index.html">Adopt</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- Adopt Pets Section (modified search area) -->
+    <section id="adopt">
+      <h2 class="section-title">Find Your Forever Friend Through Cradletales</h2>
+      <div class="adopt-panel">
+        <p class="text-reading">Ready to bring home a new companion? Click the button below to explore available pets.</p>
+        <!-- Adjust the href target as needed -->
+        <button onclick="window.location.href='detailsenter.html';">Adopt Pets</button>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Search</h3>
+          <p>Discover pets available near you by browsing our listings.</p>
+        </div>
+        <div class="step">
+          <h3>Meet</h3>
+          <p>Arrange a meeting with the pet and its current guardian.</p>
+        </div>
+        <div class="step">
+          <h3>Adopt</h3>
+          <p>Bring your new family member home and start a journey of love.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section id="mission">
+      <h2 class="section-title">Our Mission</h2>
+      <div class="text-reading">
+        <p>
+          At <span class="reading-highlight">Cradletales</span>, our mission is to provide every pet with a loving home. We believe every adoption not only saves a life but also creates an unbreakable bond filled with joy and loyalty.
+        </p>
+      </div>
+      <div class="text-reading">
+        <p>
+          Join us in our journey to transform the lives of stray dogs and cats in India by being a part of our community dedicated to compassion, care, and responsible pet ownership.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Adopt Section -->
+    <section id="why-adopt">
+      <h2 class="section-title">Why Adopt a Pet?</h2>
+      <div class="text-reading">
+        <p>
+          Did you know that thousands of animals roam the streets every day, longing for a safe home? Adoption brings not just joy, but also purpose and satisfaction—saving a life while enriching your own.
+        </p>
+      </div>
+      <div class="text-reading">
+        <p>
+          By adopting, you offer a second chance to an animal in need and join a movement that promotes compassion, community, and a happier society for humans and pets alike.
+        </p>
+      </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="testimonials">
+      <h2 class="section-title">Success Stories</h2>
+      <div class="testimonial">
+        <p>"I couldn't believe the love and support we received during our adoption journey. Our new pet has filled our home with unconditional love and endless joy."</p>
+        <cite>– Priya R., Bangalore</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Adopting a pet changed our lives. The process was smooth, and now our family is happier than ever with our wonderful furry friend."</p>
+        <cite>– Rahul M., Mumbai</cite>
+      </div>
+    </section>
+
+    <!-- Community Invitation Section -->
+    <section id="community">
+      <h2 class="section-title">Join Our Pet Community</h2>
+      <div class="text-reading">
+        <p>
+          Become a part of a vibrant community of pet lovers that share experiences, organize events, and work together to create a better future for every pet. Your journey in adoption can inspire others!
+        </p>
+      </div>
+      <div class="text-reading">
+        <p>
+          Join us today and help spread the message: Adopt, don't shop – because every pet deserves a loving home.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Pet Adoption Center. All Rights Reserved.</p>
+    <p>
+      <a href="privacypolicy.html">Privacy Policy</a> | 
+      <a href="termsandcondi.html">Terms &amp; Conditions</a> | 
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
+</body>
+</html>

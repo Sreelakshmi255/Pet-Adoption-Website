@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adopt a Pet</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header Section */
+    header {
+      background: url('header.jpeg') no-repeat center center/cover;
+      height: 300px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    header h1 {
+      position: relative;
+      font-size: 3em;
+      z-index: 1;
+    }
+    /* Navigation Bar */
+    nav {
+      background-color: #333;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff6f61;
+    }
+    /* Main Container */
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    /* Pet Cards Grid */
+    .pet-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .pet-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.2s;
+    }
+    .pet-card:hover {
+      transform: translateY(-5px);
+    }
+    .pet-card img {
+      width: 100%;
+      height: auto;
+    }
+    .pet-info {
+      padding: 15px;
+    }
+    .pet-info h3 {
+      margin: 0 0 10px;
+    }
+    .pet-info p {
+      margin: 5px 0;
+    }
+    .pet-info a {
+      background-color: #ff6f61;
+      color: #fff;
+      padding: 10px 15px;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .pet-info a:hover {
+      background-color: #ff3b2e;
+    }
+    /* Adoption Form Styles */
+    .adoption-form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .adoption-form h2 {
+      margin-bottom: 20px;
+    }
+    .adoption-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .adoption-form input,
+    .adoption-form select,
+    .adoption-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .adoption-form button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1em;
+      width: 100%;
+    }
+    .adoption-form button:hover {
+      background-color: #ff3b2e;
+    }
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    
+  </header>
+
+  <nav>
+    <a href="homepage2.html">Home</a>
+    <a href="index.html">Adopt</a>
+    <a href="stories.html">Stories</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- Pet Cards Section -->
+    <section class="pet-grid">
+      <!-- 1. Buddy (Dog) -->
+      <div class="pet-card">
+        <img src="dog1.jpg" alt="Buddy">
+        <div class="pet-info">
+          <h3>Buddy</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Labrador Retriever</p>
+          <a href="pet-details.html?pet=buddy">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 2. Mia (Cat) -->
+      <div class="pet-card">
+        <img src="cat1.jpg" alt="Mia">
+        <div class="pet-info">
+          <h3>Mia</h3>
+          <p>Age: 1 year</p>
+          <p>Breed: Siamese</p>
+          <a href="pet-details.html?pet=mia">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 3. Bella (Dog) -->
+      <div class="pet-card">
+        <img src="dog2.jpg" alt="Bella">
+        <div class="pet-info">
+          <h3>Bella</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Golden Retriever</p>
+          <a href="pet-details.html?pet=bella">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 4. Charlie (Dog) -->
+      <div class="pet-card">
+        <img src="dog3.jpg" alt="Charlie">
+        <div class="pet-info">
+          <h3>Charlie</h3>
+          <p>Age: 4 years</p>
+          <p>Breed: Beagle</p>
+          <a href="pet-details.html?pet=charlie">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 5. Max (Dog) -->
+      <div class="pet-card">
+        <img src="dog4.jpg" alt="Max">
+        <div class="pet-info">
+          <h3>Max</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: German Shepherd</p>
+          <a href="pet-details.html?pet=max">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 6. Rocky (Dog) -->
+      <div class="pet-card">
+        <img src="dog5.jpg" alt="Rocky">
+        <div class="pet-info">
+          <h3>Rocky</h3>
+          <p>Age: 5 years</p>
+          <p>Breed: Bulldog</p>
+          <a href="pet-details.html?pet=rocky">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 7. Daisy (Cat) -->
+      <div class="pet-card">
+        <img src="cat2.jpg" alt="Daisy">
+        <div class="pet-info">
+          <h3>Daisy</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Maine Coon</p>
+          <a href="pet-details.html?pet=daisy">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 8. Lucy (Dog) -->
+      <div class="pet-card">
+        <img src="dog6.jpg" alt="Lucy">
+        <div class="pet-info">
+          <h3>Lucy</h3>
+          <p>Age: 2.5 years</p>
+          <p>Breed: Dachshund</p>
+          <a href="pet-details.html?pet=lucy">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 9. Molly (Cat) -->
+      <div class="pet-card">
+        <img src="cat3.jpg" alt="Molly">
+        <div class="pet-info">
+          <h3>Molly</h3>
+          <p>Age: 1 year</p>
+          <p>Breed: Ragdoll</p>
+          <a href="pet-details.html?pet=molly">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 10. Bailey (Dog) -->
+      <div class="pet-card">
+        <img src="dog7.jpg" alt="Bailey">
+        <div class="pet-info">
+          <h3>Bailey</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Poodle</p>
+          <a href="pet-details.html?pet=bailey">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 11. Cooper (Dog) -->
+      <div class="pet-card">
+        <img src="dog8.jpg" alt="Cooper">
+        <div class="pet-info">
+          <h3>Cooper</h3>
+          <p>Age: 4 years</p>
+          <p>Breed: Boxer</p>
+          <a href="pet-details.html?pet=cooper">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 12. Luna (Cat) -->
+      <div class="pet-card">
+        <img src="cat4.jpg" alt="Luna">
+        <div class="pet-info">
+          <h3>Luna</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: British Shorthair</p>
+          <a href="pet-details.html?pet=luna">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 13. Milo (Dog) -->
+      <div class="pet-card">
+        <img src="dog9.jpg" alt="Milo">
+        <div class="pet-info">
+          <h3>Milo</h3>
+          <p>Age: 1.5 years</p>
+          <p>Breed: Siberian Husky</p>
+          <a href="pet-details.html?pet=milo">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 14. Sadie (Cat) -->
+      <div class="pet-card">
+        <img src="cat5.jpg" alt="Sadie">
+        <div class="pet-info">
+          <h3>Sadie</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Bengal</p>
+          <a href="pet-details.html?pet=sadie">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 15. Tucker (Dog) -->
+      <div class="pet-card">
+        <img src="dog10.jpg" alt="Tucker">
+        <div class="pet-info">
+          <h3>Tucker</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Welsh Corgi</p>
+          <a href="pet-details.html?pet=tucker">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 16. Ruby (Cat) -->
+      <div class="pet-card">
+        <img src="cat6.jpg" alt="Ruby">
+        <div class="pet-info">
+          <h3>Ruby</h3>
+          <p>Age: 2.5 years</p>
+          <p>Breed: Abyssinian</p>
+          <a href="pet-details.html?pet=ruby">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 17. Oscar (Dog) -->
+      <div class="pet-card">
+        <img src="dog11.jpg" alt="Oscar">
+        <div class="pet-info">
+          <h3>Oscar</h3>
+          <p>Age: 4 years</p>
+          <p>Breed: Doberman</p>
+          <a href="pet-details.html?pet=oscar">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 18. Lola (Cat) -->
+      <div class="pet-card">
+        <img src="cat7.jpg" alt="Lola">
+        <div class="pet-info">
+          <h3>Lola</h3>
+          <p>Age: 1 year</p>
+          <p>Breed: Scottish Fold</p>
+          <a href="pet-details.html?pet=lola">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 19. Jack (Dog) -->
+      <div class="pet-card">
+        <img src="dog12.jpg" alt="Jack">
+        <div class="pet-info">
+          <h3>Jack</h3>
+          <p>Age: 3.5 years</p>
+          <p>Breed: Border Collie</p>
+          <a href="pet-details.html?pet=jack">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 20. Sophie (Cat) -->
+      <div class="pet-card">
+        <img src="cat8.jpg" alt="Sophie">
+        <div class="pet-info">
+          <h3>Sophie</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Sphynx</p>
+          <a href="pet-details.html?pet=sophie">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 21. Zeus (Dog) -->
+      <div class="pet-card">
+        <img src="dog13.jpg" alt="Zeus">
+        <div class="pet-info">
+          <h3>Zeus</h3>
+          <p>Age: 4 years</p>
+          <p>Breed: Rottweiler</p>
+          <a href="pet-details.html?pet=zeus">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 22. Ginger (Cat) -->
+      <div class="pet-card">
+        <img src="cat9.jpg" alt="Ginger">
+        <div class="pet-info">
+          <h3>Ginger</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Exotic Shorthair</p>
+          <a href="pet-details.html?pet=ginger">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 23. Simba (Dog) -->
+      <div class="pet-card">
+        <img src="dog14.jpg" alt="Simba">
+        <div class="pet-info">
+          <h3>Simba</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Dalmatian</p>
+          <a href="pet-details.html?pet=simba">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 24. Cleo (Cat) -->
+      <div class="pet-card">
+        <img src="cat10.jpg" alt="Cleo">
+        <div class="pet-info">
+          <h3>Cleo</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Persian</p>
+          <a href="pet-details.html?pet=cleo">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 25. Pepper (Dog) -->
+      <div class="pet-card">
+        <img src="dog15.jpg" alt="Pepper">
+        <div class="pet-info">
+          <h3>Pepper</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Pitbull</p>
+          <a href="pet-details.html?pet=pepper">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 26. Thor (Dog) -->
+      <div class="pet-card">
+        <img src="dog16.jpg" alt="Thor">
+        <div class="pet-info">
+          <h3>Thor</h3>
+          <p>Age: 4 years</p>
+          <p>Breed: Alaskan Malamute</p>
+          <a href="pet-details.html?pet=thor">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 27. Nala (Cat) -->
+      <div class="pet-card">
+        <img src="cat11.jpg" alt="Nala">
+        <div class="pet-info">
+          <h3>Nala</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Savannah</p>
+          <a href="pet-details.html?pet=nala">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 28. Bruno (Dog) -->
+      <div class="pet-card">
+        <img src="dog17.jpg" alt="Bruno">
+        <div class="pet-info">
+          <h3>Bruno</h3>
+          <p>Age: 5 years</p>
+          <p>Breed: Mastiff</p>
+          <a href="pet-details.html?pet=bruno">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 29. Hazel (Cat) -->
+      <div class="pet-card">
+        <img src="cat12.jpg" alt="Hazel">
+        <div class="pet-info">
+          <h3>Hazel</h3>
+          <p>Age: 1 year</p>
+          <p>Breed: Munchkin</p>
+          <a href="pet-details.html?pet=hazel">Adopt Now</a>
+        </div>
+      </div>
+      <!-- 30. Peanut (Dog) -->
+      <div class="pet-card">
+        <img src="dog18.jpg" alt="Peanut">
+        <div class="pet-info">
+          <h3>Peanut</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Shih Tzu</p>
+          <a href="pet-details.html?pet=peanut">Adopt Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adoption Form Section -->
+    <section class="adoption-form">
+      <h2>Adoption Application</h2>
+      <form action="thankyou.html" method="post">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="pet">Select a Pet:</label>
+        <select id="pet" name="pet">
+          <option value="buddy">Buddy (Dog)</option>
+          <option value="mia">Mia (Cat)</option>
+          <option value="bella">Bella (Dog)</option>
+          <option value="charlie">Charlie (Dog)</option>
+          <option value="max">Max (Dog)</option>
+          <option value="rocky">Rocky (Dog)</option>
+          <option value="daisy">Daisy (Cat)</option>
+          <option value="lucy">Lucy (Dog)</option>
+          <option value="molly">Molly (Cat)</option>
+          <option value="bailey">Bailey (Dog)</option>
+          <option value="cooper">Cooper (Dog)</option>
+          <option value="luna">Luna (Cat)</option>
+          <option value="milo">Milo (Dog)</option>
+          <option value="sadie">Sadie (Cat)</option>
+          <option value="tucker">Tucker (Dog)</option>
+          <option value="ruby">Ruby (Cat)</option>
+          <option value="oscar">Oscar (Dog)</option>
+          <option value="lola">Lola (Cat)</option>
+          <option value="jack">Jack (Dog)</option>
+          <option value="sophie">Sophie (Cat)</option>
+          <option value="zeus">Zeus (Dog)</option>
+          <option value="ginger">Ginger (Cat)</option>
+          <option value="simba">Simba (Dog)</option>
+          <option value="cleo">Cleo (Cat)</option>
+          <option value="pepper">Pepper (Dog)</option>
+          <option value="thor">Thor (Dog)</option>
+          <option value="nala">Nala (Cat)</option>
+          <option value="bruno">Bruno (Dog)</option>
+          <option value="hazel">Hazel (Cat)</option>
+          <option value="peanut">Peanut (Dog)</option>
+        </select>
+
+        <label for="message">Tell us more about yourself:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </section>
+  </div>
+  
+  <footer>
+    &copy; 2025 Pet Adoption Center. All rights reserved.
+  </footer>
+</body>
+</html>

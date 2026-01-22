@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pet Details</title>
+  <style>
+    /* Basic styling for pet details page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .pet-image {
+      width: 100%;
+      height: auto;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .back-link {
+      margin-top: 20px;
+      display: block;
+      color: #ff6f61;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="pet-name">Pet Name</h1>
+    <img src="" id="pet-image" alt="Pet Image" class="pet-image">
+    <p id="pet-age"></p>
+    <p id="pet-breed"></p>
+    <p id="pet-description"></p>
+    <a href="index.html" class="back-link">Back to Home</a>
+  </div>
+
+  <script>
+    // Retrieve the query parameter from the URL
+    const params = new URLSearchParams(window.location.search);
+    const pet = params.get('pet');
+
+    // Define hard-coded pet details for demonstration
+    const petDetails = {
+      bella: {
+        name: "Bella",
+        age: "3 years",
+        breed: "Golden Retriever",
+        description: "Bella is a gentle and loving Golden Retriever known for her friendly personality.",
+        image: "dog2.jpg"
+      },
+      buddy: {
+        name: "Buddy",
+        age: "2 years",
+        breed: "Labrador",
+        description: "Buddy is a friendly and energetic lab who loves to play and gets along great with kids.",
+        image: "dog1.jpg"
+      },
+      mia: {
+        name: "Mia",
+        age: "1 year",
+        breed: "Siamese",
+        description: "Mia is a graceful and affectionate cat, known for her playful spirit.",
+        image: "cat1.jpg"
+      },
+      charlie: {
+        name: "Charlie",
+        age: "4 years",
+        breed: "Beagle",
+        description: "Charlie is a playful dog that loves to explore and has a keen sense of smell.",
+        image: "dog3.jpg"
+      },
+      max: {
+        name: "Max",
+        age: "3 years",
+        breed: "German Shepherd",
+        description: "Max is intelligent, loyal, and always eager to please.",
+        image: "dog4.jpg"
+      },
+      rocky: {
+        name: "Rocky",
+        age: "5 years",
+        breed: "Bulldog",
+        description: "Rocky is a gentle giant with a calm demeanor and a heart of gold.",
+        image: "dog5.jpg"
+      },
+      daisy: {
+        name: "Daisy",
+        age: "2 years",
+        breed: "Maine Coon",
+        description: "Daisy is a graceful and independent cat who enjoys quiet moments.",
+        image: "cat2.jpg"
+      },
+      lucy: {
+        name: "Lucy",
+        age: "2.5 years",
+        breed: "Dachshund",
+        description: "Lucy is a loyal companion with a quirky personality and boundless energy.",
+        image: "dog6.jpg"
+      },
+      molly: {
+        name: "Molly",
+        age: "1 year",
+        breed: "Ragdoll",
+        description: "Molly is an affectionate and gentle cat known for her striking blue eyes.",
+        image: "cat3.jpg"
+      },
+      bailey: {
+        name: "Bailey",
+        age: "3 years",
+        breed: "Poodle",
+        description: "Bailey is intelligent and elegant, with a playful spirit.",
+        image: "dog7.jpg"
+      },
+      cooper: {
+        name: "Cooper",
+        age: "4 years",
+        breed: "Boxer",
+        description: "Cooper is energetic and friendly, always ready for an adventure.",
+        image: "dog8.jpg"
+      },
+      luna: {
+        name: "Luna",
+        age: "2 years",
+        breed: "British Shorthair",
+        description: "Luna is a calm and curious cat who loves to observe her surroundings.",
+        image: "cat4.jpg"
+      },
+      milo: {
+        name: "Milo",
+        age: "1.5 years",
+        breed: "Siberian Husky",
+        description: "Milo is adventurous and loves the outdoors with a playful temperament.",
+        image: "dog9.jpg"
+      },
+      sadie: {
+        name: "Sadie",
+        age: "3 years",
+        breed: "Bengal",
+        description: "Sadie is a spirited cat with a bold personality and stunning coat patterns.",
+        image: "cat5.jpg"
+      },
+      tucker: {
+        name: "Tucker",
+        age: "2 years",
+        breed: "Welsh Corgi",
+        description: "Tucker is friendly, fun-loving, and always up for a romp.",
+        image: "dog10.jpg"
+      },
+      ruby: {
+        name: "Ruby",
+        age: "2.5 years",
+        breed: "Abyssinian",
+        description: "Ruby is graceful and inquisitive, with a playful attitude.",
+        image: "cat6.jpg"
+      },
+      oscar: {
+        name: "Oscar",
+        age: "4 years",
+        breed: "Doberman",
+        description: "Oscar is a loyal and protective companion with a gentle side.",
+        image: "dog11.jpg"
+      },
+      lola: {
+        name: "Lola",
+        age: "1 year",
+        breed: "Scottish Fold",
+        description: "Lola is a sweet and curious cat with folded ears and a charming personality.",
+        image: "cat7.jpg"
+      },
+      jack: {
+        name: "Jack",
+        age: "3.5 years",
+        breed: "Border Collie",
+        description: "Jack is intelligent, active, and loves to be challenged mentally.",
+        image: "dog12.jpg"
+      },
+      sophie: {
+        name: "Sophie",
+        age: "3 years",
+        breed: "Sphynx",
+        description: "Sophie is unique and outgoing, with a love for cuddles despite her distinctive looks.",
+        image: "cat8.jpg"
+      },
+      zeus: {
+        name: "Zeus",
+        age: "4 years",
+        breed: "Rottweiler",
+        description: "Zeus is strong and confident, yet gentle with those he trusts.",
+        image: "dog13.jpg"
+      },
+      ginger: {
+        name: "Ginger",
+        age: "2 years",
+        breed: "Exotic Shorthair",
+        description: "Ginger is a charming and cuddly cat with a love for lounging in the sun.",
+        image: "cat9.jpg"
+      },
+      simba: {
+        name: "Simba",
+        age: "3 years",
+        breed: "Dalmatian",
+        description: "Simba is playful and energetic, sporting a striking spotted coat.",
+        image: "dog14.jpg"
+      },
+      cleo: {
+        name: "Cleo",
+        age: "2 years",
+        breed: "Persian",
+        description: "Cleo is elegant and laid-back, with a luxurious coat and a regal demeanor.",
+        image: "cat10.jpg"
+      },
+      pepper: {
+        name: "Pepper",
+        age: "3 years",
+        breed: "Pitbull",
+        description: "Pepper is strong and affectionate, with a heart of gold behind a tough exterior.",
+        image: "dog15.jpg"
+      },
+      thor: {
+        name: "Thor",
+        age: "4 years",
+        breed: "Alaskan Malamute",
+        description: "Thor is powerful and majestic, with a thick coat and a gentle soul.",
+        image: "dog16.jpg"
+      },
+      nala: {
+        name: "Nala",
+        age: "2 years",
+        breed: "Savannah",
+        description: "Nala is exotic and captivating, with striking features and a curious nature.",
+        image: "cat11.jpg"
+      },
+      bruno: {
+        name: "Bruno",
+        age: "5 years",
+        breed: "Mastiff",
+        description: "Bruno is a gentle giant, combining strength with a loving heart.",
+        image: "dog17.jpg"
+      },
+      hazel: {
+        name: "Hazel",
+        age: "1 year",
+        breed: "Munchkin",
+        description: "Hazel is tiny but full of energy, with a big personality packed into a little frame.",
+        image: "cat12.jpg"
+      },
+      peanut: {
+        name: "Peanut",
+        age: "2 years",
+        breed: "Shih Tzu",
+        description: "Peanut is adorable and affectionate, with a love for snuggles and playtime.",
+        image: "dog18.jpg"
+      }
+    };
+
+    // Display pet details based on the query parameter
+    if (pet && petDetails[pet]) {
+      document.getElementById('pet-name').textContent = petDetails[pet].name;
+      document.getElementById('pet-age').textContent = 'Age: ' + petDetails[pet].age;
+      document.getElementById('pet-breed').textContent = 'Breed: ' + petDetails[pet].breed;
+      document.getElementById('pet-description').textContent = petDetails[pet].description;
+      document.getElementById('pet-image').src = petDetails[pet].image;
+    } else {
+      document.getElementById('pet-name').textContent = "Pet not found";
+      document.getElementById('pet-age').textContent = "";
+      document.getElementById('pet-breed').textContent = "";
+      document.getElementById('pet-description').textContent = "We could not find details for the requested pet.";
+      document.getElementById('pet-image').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
