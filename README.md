@@ -105,5 +105,4 @@ It is ideal for **CS students** and **frontend internship interviews**.
 
 ---
 
-ion**
-  Just tell me 👌
+
